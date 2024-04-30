@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ListaDeContatosMalu
 {
-    internal class Contato1
+    internal class Contato
     {
-       //declaração de variaveis
+        //declaração de variaveis
         private string nome;
         private string sobrenome;
         private string telefone;
@@ -31,14 +32,14 @@ namespace ListaDeContatosMalu
         public string Sobrenome
         {
 
-           get 
-           { 
-            return sobrenome;   
-           }
-           set
-           {
-            sobrenome = value;
-           }
+            get
+            {
+                return sobrenome;
+            }
+            set
+            {
+                sobrenome = value;
+            }
         }
         public string Telefone
         {
@@ -58,11 +59,26 @@ namespace ListaDeContatosMalu
                     telefone = " (00) 00000-0000";
                 }
             }
-
-            public Contato(string nome, string sobrenome, string sobrenome);
-        
-        
         }
-        
+        //construtor da classe
+        public Contato()
+        {
+            Nome = "Claudio";
+            sobrenome = "Genésio II";
+            Telefone = "(11) 95555-6666";
+        }
+        //sobrecarga do método
+        public Contato(string nome, string sobrenome, string telefone)
+        {
+            Nome = nome;
+            Sobrenome = sobrenome;
+            Telefone = telefone;
+        }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
     }
+
 }
